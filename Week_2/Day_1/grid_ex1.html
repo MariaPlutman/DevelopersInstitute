@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        section {
+            padding: 10px;
+            border: 3px solid black;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "a b b"
+                "c d d"
+                "f g g"
+                "e e e";
+            grid-column-gap: 50px;
+            grid-row-gap: 30px;
+
+        }
+
+        section>div {
+            padding: 5px;
+            height: 200px;
+        }
+
+        .div1 {
+            border: 1px solid blue;
+            background-color: #e6ffff;
+
+            grid-area: a
+        }
+
+        .div2 {
+            border: 1px solid red;
+            background-color: #ffd6cc;
+
+            grid-area: b
+        }
+
+        .div3 {
+            border: 1px solid blue;
+            background-color: #e6ffff;
+
+            grid-area: c
+        }
+
+        .div4 {
+            border: 1px solid red;
+            background-color: #ffd6cc;
+
+            grid-area: d
+        }
+
+        .div5 {
+            border: 1px solid blue;
+            background-color: #e6ffff;
+
+            grid-area: f
+        }
+
+        .div6 {
+            border: 1px solid red;
+            background-color: #ffd6cc;
+            grid-area: g
+        }
+
+        .div7 {
+            border: 1px solid orange;
+            background-color: #ffffcc;
+            grid-area: e;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="div1">
+
+        </div>
+        <div class="div2">
+
+        </div>
+        <div class="div3">
+
+        </div>
+
+        <div class="div4">
+
+        </div>
+        <div class="div5">
+
+        </div>
+        <div class="div6">
+
+        </div>
+
+        <div class="div7">
+
+        </div>
+    </section>
+</body>
+
+</html>
