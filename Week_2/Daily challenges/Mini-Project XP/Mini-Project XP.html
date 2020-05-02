@@ -1,0 +1,160 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Mini-Project XP</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar {
+            padding-bottom: 0vh;
+            padding-top: 0vh;
+        }
+
+        .navbar input[type=password] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+            width: 200px;
+        }
+
+        .navbar input[type=email] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+            width: 200px;
+        }
+
+        li a:hover,
+        .active {
+            background-color: #111;
+            color: white;
+            margin-top: 0vh;
+            margin-bottom: 0vh;
+        }
+
+        /* COVER */
+        .text {
+            font-weight: 600;
+        }
+
+
+        /* GRID */
+        .box {
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        a {
+            color: #cdcdcd;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #222222">
+        <a class="navbar-brand" style="margin-left: 50px; color: #cdcdcd;" href="#">Project Exercise #9</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class=" navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact <span class="badge badge-pill badge-secondary">3</span>
+                        <span class="sr-only">unread messages</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-header">Nav header</div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item" href="#">One more eparated link</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="input">
+                <input type="email" placeholder="Email" name="email" style="border-radius: 5px; margin-left: 20px;">
+                <input type="password" placeholder="Password" name="password" style="border-radius: 5px;">
+                <button type="button" class="btn btn-success" style="margin-left: 10px; margin-right: 80px;">Sign
+                    in</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 text">Hello, world!</h1>
+            <p class="lead">This this Exercise #9. It includes a large callout called a jumbotron and three supporting
+                pieces of
+                content.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button" style="background-color: #2f78b9;">Learn more</a>
+        </div>
+    </div>
+    <div class="alert alert-warning alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Warning!</strong> Your subscription is about to expire in 3 days.
+    </div>
+
+    <div class="row">
+        <div class="col box">
+            <h1>Heading</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat corrupti excepturi omnis velit qui ex,
+                harum ea alias ut, soluta, officiis maiores sit maxime perspiciatis perferendis. Tempore voluptates
+                facilis natus.</p>
+            <button type="button" class="btn btn-outline-secondary"><img src="bar-chart-2.svg"> View details</button>
+        </div>
+        <div class="col box">
+            <h1>Heading</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat corrupti excepturi omnis velit qui ex,
+                harum ea
+                alias ut, soluta, officiis maiores sit maxime perspiciatis perferendis. Tempore voluptates facilis
+                natus.</p>
+            <button type="button" class="btn btn-outline-secondary"><img src="smartphone.svg"> View details</button>
+        </div>
+        <div class="col box">
+            <h1>Heading <span class="badge badge-secondary" style="background-color: #56c0e0;">New</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat corrupti excepturi omnis velit qui ex,
+                harum ea
+                alias ut, soluta, officiis maiores sit maxime perspiciatis perferendis. Tempore voluptates facilis
+                natus.</p>
+            <button type="button" class="btn btn-outline-secondary"><img src="map-pin.svg"> View details</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+
+
+</html>
