@@ -8,4 +8,4 @@ console.log(array) // [“Kiwi”, “Oranges”, “Blueberries”]
 
 
 var array2 = ["Banana", ["Apples", ["Oranges"], "Blueberries"]];
-array2[1][1] // access “Oranges”.
+array2[1][1][0] // access “Oranges”.
