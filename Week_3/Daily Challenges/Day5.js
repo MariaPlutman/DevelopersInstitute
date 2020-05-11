@@ -1,34 +1,32 @@
-// Ask the user for several words and save them.Check if the words given are strings
-let word = prompt("Give me several words:");
-function isString() {
-    if (typeof wordPrompt === 'string' || word instanceof String) {
-        console.log(`${word} is a string`)
-    } else { `${word} is NOT a string` }
-}
-
-function countLetters() {
-    for (let i = 0; i < 3; i++) {
-        let word = [];
-        let input = prompt("Give me several words:");
-        word.push(input)
-        let tempArr = word[i].split('');
-        let letters = []
-        let count = 1;
-        for (let i = 0; i < tempArr.length; i++) {
-            if (tempArr[i] === tempArr[i + 1]) {
-                count++;
-            } else {
-                let value = `${count}`
-                letters = [...letters, value];
-                count = 1
+let str = prompt("Give me several words:");
+function freq(s) {
+    console.log(s);
+    let i, j;
+    let a = new Array();
+    for (j = 0; j < s.length; j++) {
+        for (i = 0; i < a.length; i++) {
+            if (a[i][0] == s[j]) {
+                a[i][1]++;
+                break;
             }
         }
-        return letters
+        if (i == a.length) {
+            a[i] = [s[j], 1];
+        }
     }
-
+    return a;
 }
-
-console.log(countLetters())
-
-
-
+let all_words = str.split(' ');
+let all_freq = all_words.map(freq);
+console.log(all_freq);
+let max_freq = 0;
+let max_word;
+for (let i = 0; i < all_freq.length; i++) {
+    for (j = 0; j < all_freq[i].length; j++) {
+        if (all_freq[i][j][1] > max_freq) {
+            max_freq = all_freq[i][j][1];
+            max_word = i;
+        }
+    }
+}
+console.log(all_words[max_word]);
