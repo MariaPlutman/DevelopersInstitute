@@ -59,16 +59,23 @@ let grades = {
 
 //Write a program to check which student has the best grade. Console.log the name of the student.
 var largest = 0;
+var worst = 100;
 for (let i in grades) {
     if (grades[i] > largest) {
         largest = grades[i];
     }
+    if (grades[i] < worst) {
+        worst = grades[i];
+    }
 }
 
-const getKeyByValue = (obj, value) =>
+const best = (obj, value) =>
     console.log(Object.keys(obj).find(key => obj[key] === value));
-getKeyByValue(grades, largest);
+best(grades, largest);
 
+const worstKey = (obj, value) =>
+    console.log(Object.keys(obj).find(key => obj[key] === value));
+worstKey(grades, worst);
 
 //Exercise 4
 let i = 0;
@@ -76,4 +83,6 @@ while (i < 10) {
     if (i === 7) {
         console.log("seven")
     }
+    i++;
+    console.log(i)
 }
