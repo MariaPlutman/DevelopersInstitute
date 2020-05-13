@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 3 - DOM</title>
+</head>
+
+<body>
+
+    <script>
+        let allBooks = [
+            {
+                title: "The Fifth Vital",
+                author: "Mike Majlak",
+                image: 'https://images-na.ssl-images-amazon.com/images/I/41MlNXxW-+L._SX331_BO1,204,203,200_.jpg',
+                alreadyRead: true
+            },
+            {
+                title: "The 5 Love Languages: The Secret to Love that Lasts",
+                author: "Gary Chapman",
+                image: 'https://images-na.ssl-images-amazon.com/images/I/41ILRrgp5-L._SX322_BO1,204,203,200_.jpg',
+                alreadyRead: false
+            }
+        ]
+
+        let elem = document.createElement('div');
+        document.body.appendChild(elem);
+        elem = document.createElement('ul');
+        document.body.getElementsByTagName('div')[0].appendChild(elem);
+
+        for (x of allBooks) {
+            console.log(x);
+            elem = document.createElement('tr');
+            var text = document.createTextNode(x.title + " written by " + x.author);
+            if (x.alreadyRead) {
+                elem.setAttribute("style", "color:red");
+            }
+            elem.appendChild(text);
+            document.body.getElementsByTagName('ul')[0].appendChild(elem)
+
+            var img = document.createElement("img");
+            img.setAttribute("src", x.image);
+            img.setAttribute("style", "width:100px; height:100px;");
+            document.body.getElementsByTagName('ul')[0].appendChild(img)
+        }
+
+    </script>
+</body>
+
+</html>

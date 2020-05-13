@@ -16,6 +16,7 @@ function playTheGame() {
     }
 }
 
+console.logp(layTheGame())
 
 function test(myNumber, computerNumber) {
     if (myNumber == computerNumber) {
