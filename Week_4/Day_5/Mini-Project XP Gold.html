@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Project XP Gold : Hanging Game</title>
+</head>
+
+<body>
+    <script>
+        function hanging_game() {
+            let word = prompt("(Player 1) Enter a word: ");
+            let secret = '*';
+            console.log(`The word is: \n ${secret.repeat(word.length)}`)
+            for (let i = 10; i > 0; i--) {
+                let guess = prompt("(Player 2) Guess a letter: ");
+                if (word.includes(guess)) {
+                    let letter = word.indexOf(guess)
+                } else {
+                    console.log(`Youre losing one life, you have only ${i}`)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
