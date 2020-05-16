@@ -53,8 +53,7 @@
         }
 
         //Delete the <li> Sarah
-        let elem = document.getElementsByTagName("ul")[1].children[1];
-        elem.remove()
+        document.getElementsByTagName("ul")[1].children[1].remove()
 
         //Change the class of <ul> by “student_list”
         //Add a class “university” to the first <ul>
@@ -63,7 +62,11 @@
 
 
         //Exercise 3
-
+        let logo = document.getElementsByClassName("fb_logo")
+        logo[0].style.backgroundColor = "red"
+        logo[0].style.background = "url('https://cdn.1min30.com/wp-content/uploads/2017/07/Symbole-Instagram.jpg')"
+        let button = document.getElementsByClassName("login_form_login_button")
+        button[0].children[0].value = "Intagrammmmmm!"
     </script>
 </body>
 
