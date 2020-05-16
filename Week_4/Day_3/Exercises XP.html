@@ -8,7 +8,7 @@
 
 <body>
     <!-- Exercise 1 -->
-    <div id="navBar">
+    <!-- <div id="navBar">
         <ul>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Home</a></li>
@@ -16,21 +16,54 @@
             <li><a href="#">Messenger</a></li>
             <li><a href="#">My Pics</a></li>
         </ul>
-    </div>`
+    </div> -->
+
+    <!-- Exercise 2 -->
+    <div id="container">Users:</div>
+    <ul class="list">
+        <li>John</li>
+        <li>Pete</li>
+    </ul>
+    <ul class="list">
+        <li>David</li>
+        <li>Sarah</li>
+        <li>Dan</li>
+    </ul>
 
     <script>
         //Exercise 1
-        document.getElementById("navBar").id = "socialNetworkNavigation";
+        // let elem = document.getElementById("navBar").id = "socialNetworkNavigation";
 
-        var node = document.createElement("li");
-        var textnode = document.createTextNode("Logout");
-        node.appendChild(textnode);
-        document.getElementsByTagName("ul")[0].appendChild(node);
+        // var node = document.createElement("li");
+        // var textnode = document.createTextNode("Logout");
+        // node.appendChild(textnode);
+        // document.getElementsByTagName("ul")[0].appendChild(node);
 
-        var c = document.getElementsByTagName("li")[0];
-        var x = c.childNodes[0].nodeValue;
-        document.parentNode
-            .innerHTML = x;
+        //Exercise 2
+        //Change the name “Pete” by “Richard”
+        var list = document.getElementsByClassName("list");
+        list[0].lastElementChild.innerHTML = "Richard";
+
+        //Change each first name of the <ul> by your name
+        //Add add the end of each <ul>, a paragraph that says “Hey students”
+        for (let x of list) {
+            x.firstElementChild.innerHTML = "Maria";
+            let text = document.createElement("p").innerHTML = "Hey Students";
+            x.after(text);
+        }
+
+        //Delete the <li> Sarah
+        let elem = document.getElementsByTagName("ul")[1].children[1];
+        elem.remove()
+
+        //Change the class of <ul> by “student_list”
+        //Add a class “university” to the first <ul>
+        document.getElementsByTagName("ul")[0].className = "student_list";
+        document.getElementsByTagName("ul")[1].className = "university";
+
+
+        //Exercise 3
+
     </script>
 </body>
 
