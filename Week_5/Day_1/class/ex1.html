@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events</title>
+</head>
+
+<body>
+    <div>
+        <!-- Exercise 1 -->
+        <table id="sampleTable" border="1">
+            <tr>
+                <td>Row1 cell1</td>
+                <td>Row1 cell2</td>
+            </tr>
+            <tr>
+                <td>Row2 cell1</td>
+                <td>Row2 cell2</td>
+            </tr>
+        </table>
+        <br>
+        <input type="button" onclick="insert_Row(this)" value="Insert row">
+    </div>
+    <br>
+    <!-- Exercise 2 -->
+    <div>
+        <button id="jsstyle">Style</button>
+    </div>
+
+
+    <script>
+
+        //Exercise 1
+        function insert_Row(x) {
+            let row = x.previousElementSibling.insertRow(0);
+            for (i = 0; i < 2; i++) {
+                var cell1 = row.insertCell(i);
+                cell1.innerHTML = "New Row";
+            }
+        }
+
+        //Exercise 2
+        let x = document.getElementById("jsstyle");
+        let div = document.getElementsByTagName("div");
+
+        x.addEventListener("click", function () {
+            x.style.color = "pink";
+            x.style.fontSize = "20px";
+            x.stopPropagation()
+        })
+        div.addEventListener("click", function () {
+            x.style.color = "yellow";
+            x.style.fontSize = "20px";
+        })
+
+        x.addEventListener("mouseover", function () {
+            x.style.color = "blue";
+            x.style.fontSize = "40px";
+        })
+
+        x.addEventListener("mouseout", function () {
+            x.style.color = "green";
+            x.style.fontSize = "15px";
+            e.stopPropagation()
+        })
+
+    </script>
+</body>
+
+</html>

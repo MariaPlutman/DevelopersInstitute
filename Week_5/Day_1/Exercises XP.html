@@ -1,0 +1,127 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises XP</title>
+    <style>
+        body {
+            padding-top: 30px;
+        }
+
+        label,
+        input {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Exercise 1 -->
+    <article>
+        <h1> Some Facts </h1>
+        <h2> The CHOCOLATE </h2>
+        <p>Chocolate is made from tropical Theobroma cacao tree seeds. Its earliest use dates back to the Olmec
+            civilization
+            in Mesoamerica.</p>
+        <p> After the European discovery of the Americas, chocolate became very popular in the wider world, and its
+            demand
+            exploded. </p>
+        <p> Chocolate has since become a popular food product that millions enjoy every day, thanks to its unique, rich,
+            and
+            sweet taste.</p>
+        <p> But what effect does eating chocolate have on our health?</p>
+    </article>
+    What is your name ?<input type="text" name="userName">
+    What did you think of the article ?<input type="text" name="questionToUser" onchange="append()">
+
+    <!-- Exercise 2 -->
+    <p id="ex2"><strong>Hello</strong> I hope you are enjoying <strong>this</strong> class.At the
+        <strong>end</strong> you <strong>will</strong> be great Developers!
+        <strong>Enjoy</strong> the <strong>JavaScript </strong> lessons</p>
+
+    <!-- Exercise 3 -->
+    <p id="ex3">Input radius value and get the volume of a sphere.</p>
+    <form id="MyForm">
+        <label for="radius">Radius</label><input type="text" name="radius" id="radius" required>
+        <label for="volume">Volume</label><input type="text" name="volume" id="volume">
+        <input type="submit" value="Calculate" id="submit">
+    </form>
+
+    <script>
+        //Exercise 1
+        let para = document.getElementsByTagName("p");
+        for (x of para) {
+            x.setAttribute("class", "para_article");
+        }
+
+        let article = document.getElementsByTagName("article")[0];
+        article.removeChild(article.lastElementChild);
+
+        let h2 = document.getElementsByTagName("h2")[0];
+        h2.addEventListener("click", function () {
+            h2.parentNode.removeChild(h2);
+        })
+
+        let h1 = document.getElementsByTagName("h1")[0];
+        h1.style.fontSize = Math.random() * 100;
+        h1.addEventListener("click", function () {
+            h1.style.display = "none";
+        })
+
+        para[1].addEventListener("click", function () {
+            para[1].style.opacity = "0";
+            para[1].style.transition = "opacity 2s ease-in-out ";
+        })
+
+        function append() {
+            let input = document.getElementsByTagName("input");
+            let bool = false;
+
+            if (true) {
+                let table = document.createElement("table");
+                let row = table.insertRow(0);
+                for (i = 0; i < 2; i++) {
+                    var cell = row.insertCell(i);
+                    cell.innerHTML = input[i].value;;
+                }
+                document.body.appendChild(table);
+            }
+        }
+
+        //Exercise 2
+        function getBold_items() {
+            let strong = document.getElementById("ex2").getElementsByTagName("strong");
+            return strong
+        }
+
+        function highlight() {
+            let strong = getBold_items();
+            for (let x of strong) {
+                x.style.color = "blue";
+            }
+        }
+
+        let motion = document.getElementById("ex2");
+        motion.addEventListener("mouseover", highlight);
+        motion.addEventListener("mouseout", function () {
+            let strong = getBold_items();
+            for (let x of strong) {
+                x.removeAttribute("style");
+            }
+        });
+
+        //Exercise 3
+        function volume_sphere() {
+            let radius = document.getElementById('radius').value;
+            radius = Math.abs(radius);
+            let volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+            volume = volume.toFixed(4);
+            document.getElementById('volume').value = volume;
+            return false;
+        }
+        window.onload = document.getElementById('MyForm').onsubmit = volume_sphere;
+    </script>
+</body>
+
+</html>
