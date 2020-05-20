@@ -1,0 +1,28 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 - Learning DOM Animations
+    </title>
+</head>
+
+<body>
+    <form method="get">
+        <input type="text" name="fullName" onkeypress="return (event.charCode > 64 && 
+	event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" placeholder="Full Name">
+        <input type="submit">
+    </form>
+    <script>
+
+    </script>
+</body>
+
+</html>
+
+
+
+<!-- The onkeypress attribute is a JavaScript event attribute that executes the following peice of code whenever a user press
+key from his keyboard. Inside this function, we check if the character code of the input character lies between the
+standard ASCII(American Standard Code for Information Interchange) character codes for alphabets. 
+The capital A-Z start from 65 and ends at 90 and small a-z starts from 97 and ends at 122. Here is the code for allowing only alphabets on key press.-->
