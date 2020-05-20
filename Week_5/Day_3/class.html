@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test {
+            background-color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function sales() {
+            let timeleft = 10;
+            let div = document.createElement('div')
+            div.setAttribute('class', 'test')
+            let alert = document.createTextNode(`The sales end in ${countdown}sec!`)
+            div.appendChild(alert)
+            document.body.appendChild(div)
+        }
+        setTimeout(sales, 5000);
+
+        let seconds = 10;
+        let countdown = setInterval(function () {
+            seconds--;
+            if (seconds <= 0) clearInterval(countdown);
+        }, 1000);
+    </script>
+</body>
+
+</html>
