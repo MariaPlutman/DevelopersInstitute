@@ -1,0 +1,300 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script language="javascript " type="text/javascript " src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-gap: 10px;
+        }
+        
+        .grid-container>div {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        h4 {
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        button {
+            margin-bottom: 30px;
+            width: fit-content;
+        }
+        
+        .shopping-cart {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            margin-right: 20px;
+            margin-top: 10px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: lighter;
+        }
+        
+        .shopping-cart-head {
+            background: white;
+            color: #50555d;
+            padding: 5px;
+        }
+        
+        .shopping-cart,
+        .shopping-cart-head {
+            border-radius: 5px;
+        }
+        
+        .empty-cart-btn,
+        .cart-checkout {
+            display: none;
+        }
+        
+        .empty-cart-btn {
+            margin-bottom: 5px;
+        }
+        
+        .cart-checkout {
+            background: limegreen;
+        }
+        
+        #pay {
+            margin-left: 5px;
+            width: fit-content;
+            border-radius: 0%;
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: lighter;
+        }
+        
+        #delete {
+            margin-left: 30px;
+            width: fit-content;
+            border-radius: 0%;
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: lighter;
+        }
+        /* .btn {
+            border-radius: 0%;
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: lighter;
+        } */
+    </style>
+    <title>Teas</title>
+</head>
+
+<body>
+    <!-- BEGIN NAVBAR -->
+    <div class="bg-img-extras">
+        <div class="container">
+            <nav class="navbar fixed-top topnav">
+                <a id="logo" class="nav-link" href="index.html">BLOOM'S TEA</a>
+                <a class="nav-link" href="teas.html">Teas</a>
+                <a class="nav-link" href="#extras">Extras</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <div id="comp-j4mpgz1dline" class="style-j4mph5j1line"></div>
+        <div class="jumbotron hero-title-inside" style="background-color:transparent;margin-top: 15%;">
+            <h1 class="display-4" style="font-family: didot-w01-italic,serif;"><i>Shop Extras</i></h1>
+        </div>
+    </div>
+    <!-- END NAVBAR -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="close()">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
+    <!-- BEGIN TEA SHOP -->
+    <div class="blockTeas">
+        <div class="row">
+            <div class="col-md-3">
+                <h4 style="text-align: left; font-size: 2rem; margin-bottom: 1rem; margin-top: 0;"><i>Filters</i></h4>
+                <div class="lineFilters"></div>
+                <p style="text-align: left;"><i>Price</i></p>
+
+                <div class="PriceLabel">
+                    <div id="rs-bullet" class="rs-label"></div>
+                    <div id="lineFilterColor"></div>
+                    <input id="rs-range-line" class="Filters" type="range" value="20" min="0" max="20" step="1" style="width:225; cursor: hand;" oninput="showSliderValue()">
+
+                    <!-- <output name="rangeVal">50</output> -->
+                </div>
+                <div class="box-minmax" style="margin-top: 30px;">
+                    <div><i>0</i></div>
+                    <div><i>20</i></div>
+                </div>
+                <div class="lineFilters" style="margin-top: 1rem;"></div>
+                <p style="text-align: left;"><i>Category</i></p>
+                <div class="listCategory">
+                    <div class="listCategoryItem1" style="cursor: hand;" onclick="filterByCat('item1')"><i>All</i></div>
+                    <div class="listCategoryItem2" style="cursor: hand;" onclick="filterByCat('item2')"><i>Teapots</i>
+                    </div>
+                    <div class="listCategoryItem3" style="cursor: hand;" onclick="filterByCat('item3')"><i>Cups</i>
+                    </div>
+                    <div class="listCategoryItem4" style="cursor: hand;" onclick="filterByCat('item4')"><i>Other</i>
+                    </div>
+                </div>
+                <div class="lineFilters" style="margin-top: 1rem;"></div>
+            </div>
+            <div class="col-md-9">
+                <section>
+                    <div class="shopping-cart">
+                        <div class="shopping-cart-head" id="card">
+                            <h4 id="cart" style="font-weight: bolder; font-size: 18px;">Product(s) in Cart</h4>
+                            <button type="button" class="btn btn-dark" id="delete" onclick="clearCart()">Clear
+                                cart<button type="button" class="btn btn-dark" id="pay" onclick="payCart()">Pay
+                                    cart</button></button>
+                        </div>
+                    </div>
+                    <div class="grid-container" id="productsItems">
+                        <div class="myItems">
+                            <img src="pictures/teapot1.webp" class="teapots" id="img1" alt="Image 1">
+                            <h4><i>Classic Tea Pot</i> </h4>
+                            <p class="price">$20.00</p>
+                            <button click="" type="button" class="btn btn-dark" style="width: 18.5rem;" id="addToCard" onclick="addToCart(2)">Add
+                                to
+                                Card</button>
+                        </div>
+                        <div class="myItems">
+                            <img src="pictures/teapot2.webp" class="teapots" id="img1" alt="Image 2">
+                            <h4><i>Modern Tea Pot</i> </h4>
+                            <p class="price">$17.00</p>
+                            <button type="button" class="btn btn-dark" style="width: 18.5rem;" id="addToCard" onclick="addToCart(3)">Add to
+                                Card</button>
+                        </div>
+                        <div class="myItems">
+                            <img src="pictures/teapot3.webp" class="teapots" alt="Image 3">
+                            <h4><i>Round Tea Pot</i> </h4>
+                            <p class="price">$19.00</p>
+                            <button type="button" class="btn btn-dark" style="width: 18.5rem;" id="addToCard" onclick="addToCart(4)">Add to
+                                Card</button>
+                        </div>
+                        <div class="myItems">
+                            <img src="pictures/teacup1.webp" class="cups" alt="Image 4">
+                            <h4><i>Cup</i> </h4>
+                            <p class="price">$5.00</p>
+                            <button type="button" class="btn btn-dark" style="width: 18.5rem;" id="addToCard" onclick="addToCart(5)">Add to
+                                Card</button>
+                        </div>
+                        <div class="myItems">
+                            <img src="pictures/teaball.webp" class="other" alt="Image 5">
+                            <h4><i>Tea Ball Infuser</i> </h4>
+                            <p class="price">$2.00</p>
+                            <button type="button" class="btn btn-dark" style="width: 18.5rem;" id="addToCard" onclick="addToCart(6)">Add to
+                                Card</button>
+                        </div>
+                        <div class="myItems">
+                            <img src="pictures/teacup2.webp" class="cups" alt="Image 6">
+                            <h4><i>Tea cups set</i> </h4>
+                            <p class="price">$15.00</p>
+                            <button type="button" class="btn btn-dark" style="width: 18.5rem;" id="addToCard" onclick="addToCart(7)">Add to
+                                Card</button>
+                        </div>
+                    </div>
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+    <!-- <div class="teas" style="margin-top: 50px;"></div> -->
+    <!-- BEGIN FOOTER -->
+    <script language="javascript " type="text/javascript " src="footer.txt "></script>
+    <!-- END FOOTER -->
+    <script>
+        function addToCart(n) {
+            var tag = document.createElement("p");
+            var text = document.getElementsByTagName("button")[n].parentElement.children[1].innerText
+            var price = document.getElementsByTagName("button")[n].parentElement.children[2].innerText
+            var element = document.getElementById("cart");
+            var bool = false;
+            for (let i = 0; i < element.childElementCount; i++) {
+                let count = 1;
+                if (element.children[i].innerText.includes(text)) {
+                    count = parseInt(element.children[i].innerText.substr(1, 1))
+                    element.children[i].remove();
+                    count++;
+                    let FinalText = document.createTextNode("x" + count + " " + text + " " + price);
+                    tag.appendChild(FinalText);
+                    bool = true;
+                }
+            }
+            if (bool == false) {
+                let FinalText = document.createTextNode("x" + 1 + " " + text + " " + price);
+                tag.appendChild(FinalText);
+            }
+            element.appendChild(tag);
+        }
+
+        function clearCart() {
+            var element = document.getElementById("cart");
+            element.querySelectorAll('*').forEach(n => n.remove());
+        }
+
+        function payCart() {
+            var element = document.getElementById("cart");
+            var modal = document.getElementById("myModal");
+            var modalContent = document.getElementsByClassName("modal-content")[0].children[1];
+            var sum = 0;
+            if (element.childElementCount == 0) {
+                alert("Your cart shopping is empty")
+                return;
+            } else {
+                // When the user clicks the button, open the modal 
+                modal.style.display = "block";
+                modalContent.innerText = "";
+                for (let i = 0; i < element.childElementCount; i++) {
+                    sum = sum + (parseInt(element.children[i].innerText.split(" ")[3].substr(1, 2)) * parseInt(element.children[i].innerText.split(" ")[0].substr(1, 1)))
+                }
+                modalContent.innerText = element.innerText;
+                var tag = document.createElement("p");
+                var textSum = document.createTextNode("TOTAL AMOUNT DUE: " + sum)
+                tag.appendChild(textSum);
+                tag.style.fontWeight = "bold";
+                modalContent.appendChild(tag);
+                // element.querySelectorAll('*')
+            }
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        function close() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+</body>
+
+</html>
