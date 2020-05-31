@@ -1,0 +1,18 @@
+def encrypt():
+    text = input("Enter your message:")
+    step = int(input("Enter your step:"))
+
+    result = ""
+
+    for i in range(len(text)):
+        char = text[i]
+
+        # Encrypt uppercase characters
+        if (char.isupper()):
+            result += chr((ord(char) + step-65) % 26 + 65)
+
+        # Encrypt lowercase characters
+        else:
+            result += chr((ord(char) + step - 97) % 26 + 97)
+
+    return result
