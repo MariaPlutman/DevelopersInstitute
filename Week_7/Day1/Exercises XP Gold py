@@ -1,7 +1,0 @@
-# Exercise 1
-fruits = input("What's your favorite fruits?")
-favorite_fruits = ['apple', 'mango', 'cherry']
-if fruits in favorite_fruits:
-    print('You chose one of your favorite fruits! Enjoy!')
-else:
-    print('You chose a new fruit. I hope you enjoy it too!')
