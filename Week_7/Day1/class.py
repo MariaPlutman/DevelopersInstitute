@@ -1,4 +1,4 @@
-'''age_var = 'age'
+age_var = 'age'
 my_dog = {
     'name': 'Albert',
     'age': 8.5,
@@ -19,9 +19,18 @@ print(my_dog)
 # Running a fot loop on a dictionary (give the keys)
 for element in my_dog.items():  # my_dog.values(), .keys()
     print(element)
-'''
 
 
 list1 = ['Rick', 'Donald', 'Mickey', 'Mario']
 list2 = ['Sanchez', 'Duck', 'Mouse', 'Kart']
 print({list1[i]: list2[i] for i in range(len(list1))})
+
+calendar = {}
+keepgoing = True
+
+while keepgoing:
+    print("""
+    Hi, what do you want to do:
+    1) Add an event
+    2) See your calendar
+    """)
