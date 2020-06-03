@@ -33,12 +33,25 @@ main()'''
 # Exercise 2
 
 
-def throw_dice():
-    return random.randint(1, 6)
+def main():
+    rounds = 0
+    count = 0
+    while rounds != 100:
+        player1 = dice_roll()
+        player2 = dice_roll()
+        rounds = rounds + 1
+        if player1 == player2:
+            count += 1
+            print(
+                f'Total throws: {rounds}\n')
+            break
+        else:
+            continue
 
 
-def throw_until_doubles():
-    val = throw_dice()
+def dice_roll():
+    diceRoll = random.randint(1, 6)
+    return diceRoll
 
 
-throw_until_doubles()
+main()
