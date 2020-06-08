@@ -57,16 +57,13 @@ print(Norm(numbers))'''
 
 # Exercise 6
 # Write a function to find if an array is monotonic(sorted either ascending of descending)
-
-
-def isMono(my_list):
+'''def isMono(my_list):
 
     return (all(my_list[i] <= my_list[i + 1] for i in range(len(my_list) - 1)) or
             all(my_list[i] >= my_list[i + 1] for i in range(len(my_list) - 1)))
 
-
 my_list = [7, 6, 5, 5, 2, 0]
 # my_list = [2, 3, 3, 3]
 # my_list = [1, 2, 0, 4]
-
 print(isMono(my_list))
+'''
