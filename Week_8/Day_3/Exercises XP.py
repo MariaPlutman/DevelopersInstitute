@@ -21,7 +21,7 @@ class Family:
 
     def __repr__(self):
         print('''The normal family:
-    ______________________________________ /n''')
+    ______________________________________ ''')
         for member in self.members:
             print(member["name"], member['age'],
                   member["gender"], member["is_child"])
