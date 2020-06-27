@@ -22,9 +22,3 @@ with open("/Users/user/Desktop/DevelopersInstitute/Week_10/Day_3/ex2.json", "w")
     data = json.loads(sampleJson2)
     sorted_json = json.dumps(data, indent=2, sort_keys=True)
     file.write(sorted_json)
-    # dict_keys = sampleJson.keys()
-    # dict_keys = sorted(dict_keys)
-    # new_dict = {}
-    # for key in dict_keys:
-    #     new_dict[key] = sampleJson[key]
-    # json.dump(new_dict, file)
