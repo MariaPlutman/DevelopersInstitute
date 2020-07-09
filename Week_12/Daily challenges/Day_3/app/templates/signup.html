@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="content-section">
+    <form action="" method="POST">
+        <fieldset class="form-group">
+            <dir class="form-group">
+                {{ form.firstname.label(class="form-control-label") }}
+                {{ form.firstname(class="form-control form-control-lg") }}
+                {% for error in form.lastname.errors %}
+                <small style="color:red">{{ error }}</small>
+                {% endfor %}
+            </dir>
+
+            <dir class="form-group">
+                {{ form.lastname.label(class="form-control-label") }}
+                {{ form.lastname(class="form-control form-control-lg") }}
+                {% for error in form.lastname.errors %}
+                <small style="color:red">{{ error }}</small>
+                {% endfor %}
+            </dir>
+        </fieldset>
+        <div class="form-group" style="margin-left: 4%">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock %}
