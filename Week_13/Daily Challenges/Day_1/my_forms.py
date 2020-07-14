@@ -10,3 +10,4 @@ class Phonebook(FlaskForm):
     email = wtforms.StringField('email_label')
     phone = wtforms.IntegerField('phone_label')
     adress = wtforms.StringField('adress_label')
+    submit_button = wtforms.SubmitField('Add Contact')

@@ -8,7 +8,8 @@ app.secret_key = 'replace later'
 @app.route("/", methods=['GET', 'POST'])
 def index():
     phone_form = Phonebook()
-
+    if phone_form.validate_on_submit():
+        return "New contact was added!"
     return render_template('index.html', form=phone_form)
 
 

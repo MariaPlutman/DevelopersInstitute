@@ -5,24 +5,44 @@
 {% block content %}
 <h1>Get started</h1>
 
-<form action="">
+<form action="{{ url_for('index') }}" , method="POST">
     <div>
         {{ form.name(class='form-control',placeholder='Username', autocomplete='off',autofocus=true) }}
+        <ul>
+            {% for error in form.name.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
     </div>
     <div>
         {{ form.email(class='form-control',placeholder='Email', autocomplete='off',autofocus=true) }}
+        <ul>
+            {% for error in form.email.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
     </div>
     <div>
         {{ form.phone(class='form-control',placeholder='Phone Number', autocomplete='off',autofocus=true) }}
+        <ul>
+            {% for error in form.phone.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
     </div>
     <div>
         {{ form.adress(class='form-control',placeholder='Adress', autocomplete='off',autofocus=true) }}
+        <ul>
+            {% for error in form.adress.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
     </div>
     <div>
-        <input type="submit" value='Add to Phonebook'>
+        {{ form.submit_button }}
     </div>
 
-    {{ <form action=""></form>.csrf_token }}
+    {{ form.csrf_token }}
 </form>
 
 {% endblock %}
