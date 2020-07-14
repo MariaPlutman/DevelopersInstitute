@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Phonebook{% endblock %}
+
+{% block content %}
+<h1>Get started</h1>
+
+<form action="">
+    <div>
+        {{ form.name(class='form-control',placeholder='Username', autocomplete='off',autofocus=true) }}
+    </div>
+    <div>
+        {{ form.email(class='form-control',placeholder='Email', autocomplete='off',autofocus=true) }}
+    </div>
+    <div>
+        {{ form.phone(class='form-control',placeholder='Phone Number', autocomplete='off',autofocus=true) }}
+    </div>
+    <div>
+        {{ form.adress(class='form-control',placeholder='Adress', autocomplete='off',autofocus=true) }}
+    </div>
+    <div>
+        <input type="submit" value='Add to Phonebook'>
+    </div>
+
+    {{ <form action=""></form>.csrf_token }}
+</form>
+
+{% endblock %}
