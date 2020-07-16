@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+
+<body>
+    <h1>Todo List</h1>
+    <div>Add a new todo item:
+        <form action="{{url_for('add')}}" method="POST">
+            <input type="text" name="todoitem">
+            <input type="submit" value="Add Item">
+        </form>
+    </div>
+    <div>
+        <h2>Incomplete Items</h2>
+        <ul>
+            {% for todo in incomplete %}
+            <li style="font-size: 20pt;">{{ todo.text }} <a href="{{ url_for('complete', id=todo.id) }}"><img
+                        style="width: 30px;" src="https://www.tasktrakz.com/images/blog/tick.png" alt=""></a></li>
+            {% endfor %}
+        </ul>
+        <h2>Complete Items</h2>
+        <ul>
+            {% for todo in complete %}
+            <li style="font-size: 20pt;">{{ todo.text }}</li>
+            {% endfor %}
+    </div>
+</body>
+
+</html>
